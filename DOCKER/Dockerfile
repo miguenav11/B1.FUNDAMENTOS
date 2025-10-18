@@ -1,6 +1,5 @@
 # 1. Elegir la imagen base
 # Imagen base ligera con Python
-FROM python:3.11-slim
 FROM python:3.14-slim
 # 2. Establecer el directorio de trabajo (dentro) del contenedor
 WORKDIR /app
