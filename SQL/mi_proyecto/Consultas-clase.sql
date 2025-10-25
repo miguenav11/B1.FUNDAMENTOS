@@ -12,10 +12,7 @@ ALTER TABLE employees ADD COLUMN title VARCHAR(100);
 ALTER TABLE employees ADD COLUMN title_date DATE;
 
 INSERT INTO employees (birth_date, first_name, last_name, salary, title, title_date)
-VALUES ('2001-12-03', 'Miguel', 'Navarro', 99999.99, 'Engineer', '2019-01-01');
-
-INSERT INTO employees (birth_date, first_name, last_name, salary, title, title_date)
-VALUES ('2001-12-03', 'Miguel', 'Navarro', 50000, 'Engineer', '2019-01-01');
+VALUES ('2001-12-11', 'Miguel', 'Navarro', 50000, 'Engineer', '2019-01-01');
 
 INSERT INTO employees (birth_date, first_name, last_name, salary, title, title_date)
 VALUES ('1990-05-15', 'Ana', 'Pérez', 35000, 'Ingeniera de Software', '2021-01-01'),
@@ -45,5 +42,30 @@ DELETE FROM employees WHERE id = 5;
 DELETE FROM employees WHERE salary > 20000;
 SELECT * FROM employees WHERE salary BETWEEN 14000 AND 50000;
 SELECT * FROM employees ORDER BY birth_date DESC;
+
+INSERT INTO employees (birth_date, first_name, last_name, salary, title, title_date)
+VALUES ('1997-03-29', 'Roberto', 'Mora', 24500.75, 'Técnico de Redes', '2021-01-01'),
+('1983-11-08', 'Paula', 'Reyes', 41250.00, 'Consultora Financiera', '2019-01-01'),
+('1999-07-14', 'Javier', 'Luna', 10500.50, 'Asistente de Marketing', '2023-01-01'),
+('1978-01-05', 'Marta', 'Vidal', 47890.99, 'Gerente de Calidad', '2016-01-01'),
+('1990-05-20', 'Adrián', 'Herrera', 30000.00, 'Analista de Datos', '2022-01-01'),
+('1986-10-25', 'Sofía', 'Diez', 38750.25, 'Especialista en Compras', '2018-01-01'),
+('2003-02-01', 'Pablo', 'Cruz', 6250.00, 'Auxiliar de Oficina', '2024-01-01'),
+('1992-08-17', 'Elena', 'Núñez', 22000.50, 'Coordinadora de Proyectos', '2021-01-01'),
+('1981-04-11', 'Fernando', 'Bravo', 49999.99, 'Jefe de Equipo', '2017-01-01');
+
+SELECT DISTINCT first_name FROM employees;
+SELECT first_name ||' '|| last_name AS nombre_completo FROM employees WHERE id = 9;
+SELECT * FROM employees WHERE first_name LIKE 'P%';
+SELECT * FROM employees WHERE first_name LIKE '%a%';
+
+SELECT COUNT(id) FROM employees;
+SELECT MAX(salary) FROM employees;
+SELECT title, AVG(salary) AS salary_avg FROM employees GROUP BY title;
+SELECT title, MAX(salary), MIN(salary) FROM employees GROUP BY title;
+
+SELECT first_name, ROUND(salary, 2) FROM employees;
+
+-- Extra Diapo 61
 
 SELECT * FROM employees;
