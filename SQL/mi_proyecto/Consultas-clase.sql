@@ -61,11 +61,11 @@ SELECT * FROM employees WHERE first_name LIKE '%a%';
 
 SELECT COUNT(id) FROM employees;
 SELECT MAX(salary) FROM employees;
-SELECT title, AVG(salary) AS salary_avg FROM employees GROUP BY title;
+SELECT title, ROUND(AVG(salary), 2) AS salary_avg FROM employees GROUP BY title;
 SELECT title, MAX(salary), MIN(salary) FROM employees GROUP BY title;
 
 SELECT first_name, ROUND(salary, 2) FROM employees;
 
 -- Extra Diapo 61
-
-SELECT * FROM employees;
+SELECT first_name, salary , ROUND(salary * 0.21, 2) AS taxes, ROUND(salary - (salary * 0.21), 2) AS net_salary FROM employees;
+-- easy peasy :-)
