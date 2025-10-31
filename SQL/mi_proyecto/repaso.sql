@@ -5,7 +5,7 @@ CREATE  TABLE IF NOT EXISTS students(
     id                  BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     first_name          VARCHAR(100) NOT NULL,
     last_name           VARCHAR(100) NOT NULL,
-    enrollment_date     DATE NOT NULL,          -- Fecha de inscripción
+    enrollment_date     NOT NULL,          -- Fecha de inscripción
     grade               NUMERIC(4,2) NOT NULL   -- La nota del estudiante
 );
 
