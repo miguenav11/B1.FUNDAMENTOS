@@ -69,3 +69,10 @@ SELECT first_name, ROUND(salary, 2) FROM employees;
 -- Extra Diapo 61
 SELECT first_name, salary , ROUND(salary * 0.21, 2) AS taxes, ROUND(salary - (salary * 0.21), 2) AS net_salary FROM employees;
 -- easy peasy :-)
+
+
+
+-- CLASE 3  31/10/2025
+-- Práctica
+
+CREATE DATABASE departments_DB;
