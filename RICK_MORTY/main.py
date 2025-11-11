@@ -6,10 +6,6 @@ print("BD conectada con éxito")
 
 # Voy por el punto 3
 
-
-# --- NO MÁS CREATE TABLES O INSERTS AQUÍ ---
-# --- eso en init.sql ---
-
 # DEFINO función
 def createTableCharacters():
     try:
@@ -25,24 +21,37 @@ def createTableCharacters():
         location_name   VARCHAR,
         image           TEXT,
         url             TEXT,
-        created         TIMESTAMP
+        created         TIMESTAMPZ
         );"""
         cur.execute(query)
         connection.commit()
     except Exception as e:
         print("Error creating table Characters: ", e)
-
+"""
+def createCharacter():
+    try:
+        query = ""
+        INSERT INTO characters(name, status, species, type, gender, origin_name, location_name, image, url, created)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);""
+        cur.execute(query)
+    except Exception as e:
+        print("Error creating character: ", e)
+"""
 
 url = "https://rickandmortyapi.com/api/character"
 response = requests.get(url)
 data = response.json()
 
 # EJECUTO función
-createTableCharacters()
-print(data)
-
+# createTableCharacters()
+# print(data)
+# print(len(data) == 2)                 data contiene info y results
+info_characters = data["results"]     # hay 20 personajes
+# print(len(data["results"][0]) == 12)# cada personaje tiene 12 apartados
+print(data["results"][0]["id"])
+      
 # GUARDO Commit
-connection.commit()
+#   connection.commit()
 # CIERRO conexión al final
-cur.close()
-connection.close()
+#   cur.close()
+#   connection.close()
