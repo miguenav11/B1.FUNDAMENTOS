@@ -1,1 +1,1 @@
-SELECT * FROM characters;
+SELECT * FROM characters ORDER BY id ASC;
